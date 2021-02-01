@@ -1,7 +1,7 @@
 import router from 'next/router';
 import Cookies from 'js-cookie';
 import cookie from 'cookie';
-import { AUTH_COOKIE_NAME } from 'configs/constants';
+import { AUTH_COOKIE_NAME } from '@configs/constants';
 
 export const isLoggedIn = (reqCookies = null) => {
   // if we don't have request cookies, get the cookie from client
@@ -23,13 +23,11 @@ export const logIn = () => {
 };
 
 export const logOut = () => {
-  if (typeof window !== 'undefined') {
-    // remove logged in user's cookie and redirect to login page
-    Cookies.remove(AUTH_COOKIE_NAME, {
-      expires: 86400,
-      sameSite: 'lax',
-    });
+  // remove logged in user's cookie and redirect to login page
+  Cookies.remove(AUTH_COOKIE_NAME, {
+    expires: 86400,
+    sameSite: 'lax',
+  });
 
-    router.push('/login');
-  }
+  router.push('/login');
 };

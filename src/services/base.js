@@ -5,14 +5,14 @@ const Service = (resource = '') => {
     return slug ? `${resource}/${slug}` : resource;
   }
 
-  const get = async (slug, options) => client.get(sanitizeUrl(slug), options);
+  const get = async (id, options) => client.get(sanitizeUrl(id), options);
   const list = async (slug, options) => client.get(sanitizeUrl(slug), options);
   const store = async (slug, body, options) =>
     client.post(sanitizeUrl(slug), body, options);
-  const update = async (slug, body, options) =>
-    client.put(sanitizeUrl(slug), body, options);
-  const destroy = async (slug, options) =>
-    client.delete(sanitizeUrl(slug), options);
+  const update = async (id, body, options) =>
+    client.put(sanitizeUrl(id), body, options);
+  const destroy = async (id, options) =>
+    client.delete(sanitizeUrl(id), options);
 
   return {
     get,

@@ -1,6 +1,7 @@
 module.exports = {
+  collectCoverage: true,
   collectCoverageFrom: [
-    '**/*.{js,jsx}',
+    'src/**/*.{js,jsx}',
     '!**/node_modules/**',
     '!**/tests/**',
     '!**/coverage/**',
@@ -18,10 +19,13 @@ module.exports = {
     '\\.(css|less|sass|scss)$': '<rootDir>/__mocks__/styleMock.js',
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/__mocks__/fileMock.js',
-    "components(.*)$": "<rootDir>/src/components/$1",
+    '@components(.*)$': '<rootDir>/src/components/$1',
+    '@configs(.*)$': '<rootDir>/src/configs/$1',
+    '@utils(.*)$': '<rootDir>/src/utils/$1',
+    '@services(.*)$': '<rootDir>/src/services/$1',
+    '@src(.*)$': '<rootDir>/src/$1',
   },
-  setupFiles: ['<rootDir>/tests/setup.js'],
-  setupFilesAfterEnv: ['<rootDir>/tests/setupAfterEnv.js'],
+  setupFilesAfterEnv: ['<rootDir>/.jest/setup.js'],
   testMatch: ['**/?(*.)+(spec|test).[jt]s?(x)'],
   testPathIgnorePatterns: [
     '/.next/',

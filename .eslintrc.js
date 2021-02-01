@@ -76,6 +76,7 @@ module.exports = {
     'react/self-closing-comp': 0,
     'react/sort-comp': 0,
     'require-yield': 0,
+    'react/jsx-props-no-spreading': 0,
   },
   settings: {
     react: {
@@ -83,10 +84,14 @@ module.exports = {
     },
     'import/resolver': {
       alias: [
-        ['components', './src/components'],
-        ['src', './src'],
-        ['utils', './src/utils'],
-        ['styles', './src/styles'],
+        ['@components', './src/components'],
+        ['@layouts', './src/components/UI/Layouts'],
+        ['@utils', './src/utils'],
+        ['@static', './src/static'],
+        ['@configs', './src/configs'],
+        ['@services', './src/services'],
+        ['@styles', './src/styles'],
+        ['@src', './src'],
       ],
     },
   },

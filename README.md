@@ -11,14 +11,16 @@ Main Libraries:
 - Next Images
 - Next PWA
 - SWR
-- Jest, Enzyme and Sinon
+- Jest, React Testing Library
 - Eslint, Style lint and Prettier
 - Pre commit
+- And more...
 
 To use:
 
 - Clone this project
 - Execute ```yarn```
+- Execute `cp .env.example .env.local` and make changes
 - Change theme colors (or add overrides) in ```src/theme/theme.js```
 - Add constants in ```src/configs/constants.js```
 - Change titles in ```src/pages/_app.js``` and ```src/pages/_document.js```
